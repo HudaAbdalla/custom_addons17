@@ -1,0 +1,94 @@
+<odoo>
+
+    <menuitem id="menu_root_cleopatra"
+              name="Cleopatra"
+              web_icon="cleopatra_hospital,static/description/icon.png"
+
+    />
+
+
+    <menuitem id="menu_patient_master"
+              name="Patients"
+              parent="cleopatra_hospital.menu_root_cleopatra"
+    />
+
+    <menuitem id="menu_patients"
+              name="Patients"
+              parent="cleopatra_hospital.menu_patient_master"
+              action="cleopatra_hospital.action_view_hospital_patient"
+    />
+
+    <menuitem id="menu_appointment_master"
+              name="Appointments"
+              parent="cleopatra_hospital.menu_root_cleopatra"
+    />
+
+
+    <menuitem id="menu_appointments"
+              name="Appointments"
+              parent="cleopatra_hospital.menu_appointment_master"
+              action="cleopatra_hospital.action_view_hospital_appointment"
+    />
+
+
+    <menuitem id="menu_departments_master"
+              name="Departments"
+              parent="cleopatra_hospital.menu_root_cleopatra"
+    />
+
+    <menuitem id="menu_departments"
+              name="Department"
+              parent="cleopatra_hospital.menu_departments_master"
+              action="cleopatra_hospital.action_view_hospital_department"
+    />
+
+
+    <menuitem id="menu_departments_master"
+              name="Departments"
+              parent="cleopatra_hospital.menu_root_cleopatra"
+    />
+
+    <menuitem id="menu_departments"
+              name="Department"
+              parent="cleopatra_hospital.menu_departments_master"
+              action="cleopatra_hospital.action_view_hospital_department"
+    />
+
+
+    <menuitem id="menu_doctor_master"
+              name="Doctor"
+              parent="cleopatra_hospital.menu_root_cleopatra"
+    />
+
+    <menuitem id="menu_doctor"
+              name="Doctor"
+              parent="cleopatra_hospital.menu_doctor_master"
+              action="cleopatra_hospital.action_view_hospital_doctor"
+    />
+
+
+    <menuitem id="menu_room_master"
+              name="Rooms"
+              parent="cleopatra_hospital.menu_root_cleopatra"
+    />
+
+    <menuitem id="menu_room"
+              name="Rooms"
+              parent="cleopatra_hospital.menu_room_master"
+              action="cleopatra_hospital.action_view_hospital_room"
+    />
+
+
+    <menuitem id="menu_medicines_master"
+              name="Medicines"
+              parent="cleopatra_hospital.menu_root_cleopatra"
+    />
+
+    <menuitem id="menu_medicine"
+              name="Medicines"
+              parent="cleopatra_hospital.menu_medicines_master"
+              action="cleopatra_hospital.action_view_hospital_medicine"
+    />
+
+
+</odoo>

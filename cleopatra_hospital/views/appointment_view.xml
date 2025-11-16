@@ -1,0 +1,143 @@
+<odoo>
+
+    <record id="view_hospital_appointment"
+            model="ir.ui.view">
+        <field name="name">hospital.appointment.form</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <form create="1" delete="1" edit="1">
+                <header>
+                    <button name="%(cleopatra_hospital.action_view_appointment_wizard)d"
+                            string="Test Button Action"
+                            type="action"/>
+
+
+
+                    <button name="action_open_appointment_wizard"
+                            string="Test Button Function"
+                            type="object"/>
+
+                    <field name="state" widget="statusbar" nolabel="1"/>
+                </header>
+                <sheet string="Appointment">
+                    <!--                    <div class="alert alert-info (alert-warning) text-center o_form_header"-->
+                    <!--                         role="alert"-->
+                    <!--                         attrs="{'invisible': [('sales_sum', '&gt;', 8000)] }">-->
+                    <!--                        <a class="close" data-dismiss="alert" href="#">x</a>-->
+                    <!--                        <div>-->
+                    <!--                            <strong>-->
+                    <!--                                Warning Message-->
+                    <!--                            </strong>-->
+                    <!--                        </div>-->
+                    <!--                        <div>you will be terminated soon Mr:-->
+                    <!--                            <field name="field_name_that_its_value_that_will_appear_after_the_message"-->
+                    <!--                                   required="0"-->
+                    <!--                                   readonly="1"/>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                    <div class="oe_button_box" name="button_box">-->
+                    <!--                        <button class="oe_stat_button" type="object"-->
+                    <!--                                name="redirect_to_advance_entries"-->
+                    <!--                                icon="fa-star">-->
+                    <!--                            <field string="Entries"-->
+                    <!--                                   name="number_of_entries"-->
+                    <!--                                   widget="statinfo"/>-->
+                    <!--                        </button>-->
+                    <!--                        <button class="oe_stat_button" type="object"-->
+                    <!--                                name="redirect_to_advance_settlements"-->
+                    <!--                                icon="fa-star">-->
+                    <!--                            <field string="Settlements"-->
+                    <!--                                   name="number_of_settlements"-->
+                    <!--                                   widget="statinfo"/>-->
+                    <!--                        </button>-->
+                    <!--                    </div>-->
+                    <!--                    <field name="image" widget="image" class="oe_avatar"/>-->
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" class="mr-3"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="patient_id"/>
+                        <field name="doctor_id"/>
+                        <field name="appointment_date"/>
+                        <field name="appointment_time"/>
+                        <field name="department_id"/>
+                        <field name="room_id"/>
+                        <field name="notes" groups="cleopatra_hospital.group_show_appointments_notes"/>
+                        <field name="symptoms"/>
+                        <field name="diagnosis"/>
+                        <field name="prescription"/>
+                        <field name="total_medicine_qty"/>
+                        <!--                        <field name="service_id"/>-->
+                        <!--                        <field name="service_fee"/>-->
+                    </group>
+
+                    <notebook>
+                        <!--                        <page string="Notes" name="notes">-->
+                        <!--                            <group>-->
+                        <!--                                <field name="notes"/>-->
+                        <!--                            </group>-->
+                        <!--                        </page>-->
+
+                        <page string="Medicines" name="medicines">
+                            <field name="medicine_line_ids">
+                                <tree editable="bottom">
+                                    <field name="medicine_id"/>
+                                    <field name="quantity"/>
+                                    <field name="doze_per_day"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           groups="base.group_no_ne"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!--    ****************************************************************************************-->
+    <record id="view_hospital_appointment_tree"
+            model="ir.ui.view">
+        <field name="name">view.hospital.appointment.tree</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <tree create="1" delete="1" edit="1" export_xlsx="1"
+                  sample="0">
+                <field name="name" class="mr-3"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="appointment_date"/>
+                <field name="appointment_time"/>
+                <field name="department_id"/>
+                <field name="room_id"/>
+                <field name="notes"/>
+                <field name="symptoms"/>
+                <field name="diagnosis"/>
+                <!--                <field name="service_id"/>-->
+                <!--                <field name="service_fee"/>-->
+            </tree>
+        </field>
+    </record>
+    <!--    ************************************************************-->
+    <record id="action_view_hospital_appointment"
+            model="ir.actions.act_window">
+        <field name="name">Contractor Contract</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.appointment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                create your first appointment !
+            </p>
+        </field>
+    </record>
+
+
+</odoo>

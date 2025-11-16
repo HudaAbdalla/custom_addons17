@@ -1,0 +1,149 @@
+<odoo>
+
+    <record id="view_hospital_doctor"
+            model="ir.ui.view">
+        <field name="name">hospital.doctor.form</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <form create="1" delete="1" edit="1">
+                <header>
+                    <!--                    <button name="action_open_new_settlement_wizard"-->
+                    <!--                            string="New Settlement"-->
+                    <!--                            type="object"-->
+                    <!--                            class="btn-primary"-->
+
+                    <!--                    />-->
+
+                </header>
+                <sheet string="Doctor">
+                    <!--                    <div class="alert alert-info (alert-warning) text-center o_form_header"-->
+                    <!--                         role="alert"-->
+                    <!--                         attrs="{'invisible': [('sales_sum', '&gt;', 8000)] }">-->
+                    <!--                        <a class="close" data-dismiss="alert" href="#">x</a>-->
+                    <!--                        <div>-->
+                    <!--                            <strong>-->
+                    <!--                                Warning Message-->
+                    <!--                            </strong>-->
+                    <!--                        </div>-->
+                    <!--                        <div>you will be terminated soon Mr:-->
+                    <!--                            <field name="field_name_that_its_value_that_will_appear_after_the_message"-->
+                    <!--                                   required="0"-->
+                    <!--                                   readonly="1"/>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                    <div class="oe_button_box" name="button_box">-->
+                    <!--                        <button class="oe_stat_button" type="object"-->
+                    <!--                                name="redirect_to_advance_entries"-->
+                    <!--                                icon="fa-star">-->
+                    <!--                            <field string="Entries"-->
+                    <!--                                   name="number_of_entries"-->
+                    <!--                                   widget="statinfo"/>-->
+                    <!--                        </button>-->
+                    <!--                        <button class="oe_stat_button" type="object"-->
+                    <!--                                name="redirect_to_advance_settlements"-->
+                    <!--                                icon="fa-star">-->
+                    <!--                            <field string="Settlements"-->
+                    <!--                                   name="number_of_settlements"-->
+                    <!--                                   widget="statinfo"/>-->
+                    <!--                        </button>-->
+                    <!--                    </div>-->
+                    <!--                    <field name="image" widget="image" class="oe_avatar"/>-->
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" class="mr-3"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="license_number"/>
+                        <field name="specialization"/>
+                        <field name="phone"/>
+                        <field name="email"/>
+                        <field name="department_id"/>
+                        <field name="available_from"/>
+                        <field name="available_to"/>
+                        <!--                        <field name="image"/>-->
+                        <!--                        <field name="doctor_ids"/>-->
+                        <!--                        <field name="room_ids"/>-->
+                    </group>
+
+                    <!--                    <notebook>-->
+                    <!--                        <page string="Notes" name="notes">-->
+                    <!--                            <group>-->
+                    <!--                                <field name="notes"/>-->
+                    <!--                            </group>-->
+                    <!--                        </page>-->
+
+                    <!--                        <page string="Contract Lines" name="lines">-->
+                    <!--                            <field name="line_ids">-->
+                    <!--                                <tree string="Lines" editable="bottom">-->
+                    <!--                                    <field name="description"/>-->
+                    <!--                                    <field name="product_uom_id"/>-->
+                    <!--                                    <field name="quantity"/>-->
+                    <!--                                    <field name="price_unit"/>-->
+                    <!--                                    <field name="currency_id"/>-->
+                    <!--                                    <field name="subtotal"/>-->
+                    <!--                                </tree>-->
+                    <!--                            </field>-->
+                    <!--                        </page>-->
+                    <!--                    </notebook>-->
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           groups="base.group_no_ne"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!--    ****************************************************************************************-->
+    <record id="view_hospital_doctor_tree"
+            model="ir.ui.view">
+        <field name="name">view.hospital.doctor.tree</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <tree create="1" delete="1" edit="1" export_xlsx="1"
+                  sample="0">
+                <field name="license_number"/>
+                <field name="specialization"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="department_id"/>
+                <field name="available_from"/>
+                <field name="available_to"/>
+            </tree>
+        </field>
+    </record>
+    <!--    ************************************************************-->
+    <record id="action_view_hospital_doctor"
+            model="ir.actions.act_window">
+        <field name="name">Doctor</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.doctor</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                create your first doctor !
+            </p>
+        </field>
+    </record>
+
+    <!--    <record id="action_module_model"-->
+    <!--            model="ir.actions.act_window">-->
+    <!--        <field name="name">model name capital</field>-->
+    <!--        <field name="type">ir.actions.act_window</field>-->
+    <!--        <field name="res_model"></field>-->
+    <!--        <field name="view_mode">tree,form</field>-->
+    <!--        <field name="context">{'default_field_name':'value','default_field_name':'value', 'hide_field_name':1}</field>-->
+    <!--        <field name="context">{'search_default_filter_name_or_groupByName':1}</field>-->
+    <!--        <field name="target">new for popup or inline for full page or current for buttons</field>-->
+    <!--        <field name="help" type="html">-->
+    <!--            <p class="o_view_nocontent_smiling_face">-->
+    <!--                create your first patient !-->
+    <!--            </p>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+</odoo>
