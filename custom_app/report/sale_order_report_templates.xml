@@ -9,7 +9,7 @@
                        <h2>Product Report</h2>
                        <br></br>
                        <p>
-                         Name huda:  <span t-field="o.name"/>
+                         Name :  <span t-field="o.name"/>
                        </p>
                    </div>
                </t>
@@ -18,93 +18,55 @@
    </template>
 </odoo> -->
 
-
-
- <odoo>
- <template id="report_sale_order">
+<odoo>
+<template id="report_sale_order">
     <t t-call="web.html_container">
-        <t t-foreach="docs" t-as="doc">
+        <t t-call="web.external_layout">
+            <t t-foreach="docs" t-as="doc">
+            
 
-            <div class="page">
-                <h2>Sale Order <t t-esc="doc.name"/></h2>
+                <div class="page">
+                <!-- <h2>Sale Order <t t-esc="doc.name"/></h2>
 
                 <p><strong>Customer:</strong> <t t-esc="doc.partner_id.name or ''"/></p>
                 <p><strong>Date:</strong> <t t-esc="doc.date_order"/></p>
                 <p><strong>Total:</strong> <t t-esc="doc.amount_total"/></p>
 
                 <h3>Order Lines</h3>
-                <table class="table table-sm o_main_table">
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Quantity</th>
-                            <th>Unit Price</th>
-                            <th>Subtotal</th>
+                 -->
+                <table style="width: 100%; border-collapse: collapse; text-align: center; direction: rtl;">
+                    <thead >
+                        <tr  style="background-color: #f2f2f2; font-weight: bold;">
+                            <th style="border: 1px solid #ccc; padding: 8px;"> Product</th>
+                            <th style="border: 1px solid #ccc; padding: 8px;">Quantity</th>
+                            <th style="border: 1px solid #ccc; padding: 8px;">Unit Price</th>
+                            <th style="border: 1px solid #ccc; padding: 8px;">Subtotal</th>
                         </tr>
+                        
                     </thead>
+                    
                     <tbody>
-                        <t t-foreach="doc.order_line" t-as="line">
-                            <tr>
-                                <td><t t-esc="line.product_id.display_name or ''"/></td>
-                                <td><t t-esc="line.product_uom_qty"/></td>
-                                <td><t t-esc="line.price_unit"/></td>
-                                <td><t t-esc="line.price_subtotal"/></td>
+                        <t t-foreach="doc.order_line " t-as="line">
+                            <tr style="background-color: #f2f2f2; font-weight: bold;">
+                                <td style="border: 1px solid #ccc; padding: 8px;"><t t-esc="line.product_id.display_name or ''"/></td>
+                                <td style="border: 1px solid #ccc; padding: 8px;"><t t-esc="line.product_uom_qty"/></td>
+                                <td style="border: 1px solid #ccc; padding: 8px;"><t t-esc="line.price_unit"/></td>
+                                <td  style="background-color: #666; color: white; font-weight: bold; border: 1px solid #ccc; padding: 8px;"><t t-esc="line.price_subtotal"/></td>
                             </tr>
                         </t>
                     </tbody>
                 </table>
-            </div>
+                
+                </div>
 
+            </t>
         </t>
     </t>
+
+    
 </template>
-<!-- 
-  <template id="report_sale_order">
-  <t t-foreach="docs" t-as="order">
-            <t t-call="web.html_container">
-                <t t-call="web.external_layout">
-  
-      <t t-set="doc" t-value="doc"/>
-      <div class="page">
-        <h2>Sale Order <t t-esc="doc.name"/></h2>
-        <p><strong>Customer:</strong> <t t-esc="doc.partner_id.name"/></p>
-        <p><strong>Date:</strong> <t t-esc="doc.date_order"/></p>
-        <p><strong>Total:</strong> <t t-esc="doc.amount_total"/></p>
 
-        <h3>Order Lines</h3>
-        <table class="table table-sm o_main_table">
-          <thead>
-            <tr>
-              <th>hProduct</th>
-              <th>hQty</th>
-              <th>hPrice</th>
-              <th>hSubtotal</th>
-            </tr>
-          </thead>
-          <tbody>
-            <t t-foreach="doc.order_line" t-as="line">
-              <tr>
-                <td><t t-esc="line.product_id.display_name"/></td>
-                <td><t t-esc="line.product_uom_qty"/></td>
-                <td><t t-esc="line.price_unit"/></td>
-                <td><t t-esc="line.price_subtotal"/></td>
-              </tr>
-            </t>
-          </tbody>
-        </table>
-      </div>
-    </t>
-  </t>    
-  </t>
-  </template> -->
-
- <!--
-  <report
-    id="report_sale_order_app1_action"
-    model="sale.order"
-    string="Sale Order - App1 PDF"
-    report_type="qweb-pdf"
-    name="odoo_app1.report_sale_order_app1"
-    file="odoo_app1.report_sale_order_app1"
-  /> -->
 </odoo> 
+
+
+<!-- web.external_layout is crucial: This template ensures the necessary CSS assets, including Bootstrap, are loaded for your report. -->
