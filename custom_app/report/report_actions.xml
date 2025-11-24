@@ -28,7 +28,9 @@
  
 <!-- In default Odoo, generating an XLSX report from the "Print" button isn't supported.
  However, you can enable this functionality by installing the OCA module, report_xlsx.
-  After installing this module, you can define an XLSX report action as follows: -->
+  After installing this module, you can define an XLSX report action as follows: 
+   with python file (report_payslips_batch.py ) to generate the xlsx report.
+  -->
   
   <record id="action_report_payslip_batches" model="ir.actions.report">
     <field name="name">Payslip Batch Excel Report</field>
