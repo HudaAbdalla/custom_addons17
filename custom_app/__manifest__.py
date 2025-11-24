@@ -13,14 +13,15 @@ custom app for excercise
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','sale_management'],
+    'depends': ['base','sale_management','bi_hr_payroll','report_xlsx'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        # 'views/views.xml',
+        # 'views/hr_payslip_view.xml',
+        # 'views/report_payslip_batch.xml'
         # 'views/templates.xml',
-        'report/sale_order_report_action.xml',
+        'report/report_actions.xml',
         'report/sale_order_report_templates.xml',
   
     ],

@@ -1,0 +1,15 @@
+<odoo>
+    <record id="view_hr_payslip_run_form_excel_button" model="ir.ui.view">
+        <field name="name">hr.payslip.run.form.excel.button</field>
+        <field name="model">hr.payslip.run</field>
+        <field name="inherit_id" ref="bi_hr_payroll.hr_payslip_run_form"/>
+        <field name="arch" type="xml">
+            <header>
+                <button name="%(action_report_payslip_batch_xlsx)d"
+                        type="action"
+                        string="Print Excel"
+                        class="btn-primary"/>
+            </header>
+        </field>
+    </record>
+</odoo>
