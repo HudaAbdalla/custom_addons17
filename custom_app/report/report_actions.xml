@@ -38,7 +38,7 @@
     <field name="report_type">xlsx</field>
     <field name="report_name">custom_app.report_payslip</field>
     <field name="report_file">custom_app.report_payslip</field>
-    <field name="print_report_name">'Payslip batch- %s'</field>
+    <field name="print_report_name">'Payslip report - %s' % (object.name)</field>
     <field name="binding_model_id" ref="bi_hr_payroll.model_hr_payslip_run"/>
     <field name="binding_type">report</field>
     <field name="attachment_use" eval="False"/>
