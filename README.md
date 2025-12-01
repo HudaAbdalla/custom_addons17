@@ -1,4 +1,4 @@
-tasks in this module:
+Tasks in this module:" custom app ..."
 1- Print sale order line in a pdf report and make some designs
 2- Print Payslips batches in excel report 
            - File name must be batch name.
