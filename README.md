@@ -10,4 +10,4 @@ Tasks in this module:" custom app ..."
         - ⁠Add employee age and it must be calculated from birthday field 
         - ⁠Add Iqaama end date, add active to HR users before 1 month of its end
 
-4- Automatically archives customers with no invoices for 1 month and send a notification to admin with the count of archived customers
+4- Automatically archives customers with no invoices for 1 month and send a notification to admin with the count of archived customers Notification + Activity + Email template
