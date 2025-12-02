@@ -7,7 +7,7 @@
             <field name="code">model._notify_hr_iqama_expiry()</field>
             <field name="active">True</field>
             <field name="interval_number">1</field>
-            <field name="interval_type">minutes</field>
+            <field name="interval_type">days</field>
             <field name="numbercall">-1</field>
         </record>
     </data>

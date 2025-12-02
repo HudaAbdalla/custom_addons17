@@ -13,18 +13,24 @@ custom app for excercise
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['hr','base','sale_management','bi_hr_payroll','report_xlsx'],
+    'depends': ['hr',
+                'base',
+                'sale_management',
+                'bi_hr_payroll',
+                'report_xlsx' ,
+                'account' ,
+                ],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        # 'views/hr_payslip_view.xml',
-        # 'views/report_payslip_batch.xml'
-        'data/employee_sequence.xml',
-        'data/hr_employee_cron.xml',
+       
+        # 'data/employee_sequence.xml',
+        # 'data/hr_employee_cron.xml',
+        'data/archived_customers_no_invoices_cron.xml',
+
         
-        
-        'views/hr_employee_view.xml',
+        # 'views/hr_employee_view.xml',
         
         'report/report_actions.xml',
         'report/sale_order_report_templates.xml',
