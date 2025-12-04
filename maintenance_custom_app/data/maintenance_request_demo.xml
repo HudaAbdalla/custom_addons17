@@ -1,0 +1,23 @@
+<odoo>
+    <!-- Employee references (must exist in hr demo data, or replace with your own) -->
+    <!-- Using hr.employee_public_demo for example -->
+
+    <record id="maintenance_request_demo_1" model="maintenance.request">
+        <field name="name">Replace Air Filter</field>
+        <field name="date_request">2025-01-12</field>
+        <field name="cost">45.50</field>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="state">draft</field>
+    </record>
+
+    <record id="maintenance_request_demo_2" model="maintenance.request">
+        <field name="name">Fix Cooling System</field>
+        <field name="date_request">2025-01-10</field>
+        <field name="cost">250.00</field>
+        <field name="employee_id" ref="hr.employee_qdp"/>
+        <field name="state">in_progress</field>
+    </record>
+
+    
+
+</odoo>

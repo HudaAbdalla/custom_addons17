@@ -1,0 +1,11 @@
+<odoo>
+    <!-- Maintenance Officer -->
+    <record id="group_maintenance_officer" model="res.groups">
+        <field name="name">Maintenance Officer</field>
+    </record>
+
+    <!-- Maintenance Manager -->
+    <record id="group_maintenance_manager" model="res.groups">
+        <field name="name">Maintenance Manager</field>
+    </record>
+</odoo>

@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+maintenance_custom_app.access_maintenance_request,access_maintenance_request,maintenance_custom_app.model_maintenance_request,,1,1,1,1
