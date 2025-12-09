@@ -1,0 +1,28 @@
+<odoo>
+    <record id="view_order_form_inherit_approval" model="ir.ui.view">
+        <field name="name">sale.order.form.awaiting.approval</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+
+            <!-- Statusbar with new order -->
+            <xpath expr="//field[@name='state']" position="attributes">
+                <attribute name="widget">statusbar</attribute>
+                <attribute name="statusbar_visible">
+                    draft,awaiting_approval,sent,sale,done,cancel
+                </attribute>
+            </xpath>
+
+            <!-- Approve button for Sales Manager -->
+            <xpath expr="//header" position="inside">
+                <button name="action_approve_order"
+                        type="object"
+                        string="Approve"
+                        class="btn-primary"
+                        groups="sales_team.group_sale_manager"
+                        invisible="state != 'awaiting_approval'"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>
