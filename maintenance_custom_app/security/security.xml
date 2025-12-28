@@ -1,11 +1,45 @@
 <odoo>
+<!-- User groups without category -->
     <!-- Maintenance Officer -->
-    <record id="group_maintenance_officer" model="res.groups">
+    <!-- <record id="group_maintenance_officer" model="res.groups">
         <field name="name">Maintenance Officer</field>
-    </record>
+    </record> -->
 
     <!-- Maintenance Manager -->
-    <record id="group_maintenance_manager" model="res.groups">
+    <!-- <record id="group_maintenance_manager" model="res.groups">
         <field name="name">Maintenance Manager</field>
+    </record> -->
+    
+<!-- User groups with categry -->
+
+     <!-- Custom category -->
+    <record id="module_category_maintenance" model="ir.module.category">
+        <field name="name">Maintenance Requests</field>
+        <field name="sequence">30</field>
+    </record>
+
+    <!-- Sales Viewer group -->
+    <record id="group_maintenance_request_viewer" model="res.groups">
+        <field name="name">Maintenance Request Viewer</field>
+        <field name="category_id" ref="maintenance_custom_app.module_category_maintenance"/>
+        <field name="comment">Can only view Maintenance Requests</field>
+    </record>
+
+    <!-- Sales Editor group -->
+    <record id="group_maintenance_request_editor" model="res.groups">
+        <field name="name">Maintenance Request Editor</field>
+        <field name="category_id" ref="maintenance_custom_app.module_category_maintenance"/>
+
+        <!-- <field name="category_id" ref="maintenance_custom_app.group_maintenance_request_viewer"/> -->
+        <field name="implied_ids" eval="[(4, ref('maintenance_custom_app.group_maintenance_request_viewer'))]"/>
+        <field name="comment">Can create and modify Maintenance Requests but cannot delete</field>
+    </record>
+    <!-- Sales Admin group -->
+    <record id="group_maintenance_request_admin" model="res.groups">
+        <field name="name">Maintenance Requests Admin</field>
+        <field name="category_id" ref="maintenance_custom_app.module_category_maintenance"/>
+        <!-- <field name="category_id" ref="maintenance_custom_app.group_maintenance_request_editor"/> -->
+        <field name="implied_ids" eval="[(4, ref('maintenance_custom_app.group_maintenance_request_editor'))]"/>
+        <field name="comment">Full access to Maintenance Requests</field>
     </record>
 </odoo>

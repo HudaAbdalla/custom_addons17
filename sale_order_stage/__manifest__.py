@@ -15,16 +15,20 @@
     # any module necessary for this one to work correctly
     'depends': [
                 'base',
-                'sale_management' ,
+                'sale_management',
                 ],
 
     # always loaded
     'data': [
+        # 'security/security.xml',
         # 'security/ir.model.access.csv',
-        'views/sale_order_inherit_views.xml',
-       
+        # 'security/sale_order_rules.xml',
+        
+        'views/sale_order_inherit_views.xml', 
     ],
     'installable': True,
     'application': True
+    
+   
 }
 

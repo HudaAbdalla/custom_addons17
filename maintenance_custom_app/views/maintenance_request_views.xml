@@ -24,14 +24,14 @@
                             type="object"
                             string="Start"
                             class="oe_highlight"
-                            groups="maintenance_custom_app.group_maintenance_officer"
+                            groups="maintenance_custom_app.group_maintenance_request_admin"
                             invisible="state != 'draft'"/>
 
                     <button name="action_done"
                             type="object"
                             string="Mark Done"
                             class="oe_highlight"
-                            groups="maintenance_custom_app.group_maintenance_manager"
+                            groups="maintenance_custom_app.group_maintenance_request_admin"
                             invisible="state != 'in_progress'"/>
 
                     <field name="state" widget="statusbar"/>
@@ -108,5 +108,6 @@
     <menuitem id="menu_maintenance_request"
               parent="menu_maintenance_root"
               name="Requests"
-              action="action_maintenance_request"/>
+              action="action_maintenance_request"
+              groups="maintenance_custom_app.group_maintenance_request_viewer"/>
 </odoo>
