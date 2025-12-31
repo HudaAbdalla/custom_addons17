@@ -33,8 +33,15 @@
         'security/security.xml',
         'security/ir.model.access.csv',
         'views/maintenance_request_views.xml',
+        'views/maintenance_dashboard_views.xml',
         'data/maintenance_request_demo.xml',
     ],
+    "assets":   {
+    "web.assets_backend": [
+        "maintenance_custom_app/static/src/js/maintenance_dashboard.js",
+        "maintenance_custom_app/static/src/xml/maintenance_dashboard.xml",
+    ],
+    },
     'installable': True,
     'application': True
 }
