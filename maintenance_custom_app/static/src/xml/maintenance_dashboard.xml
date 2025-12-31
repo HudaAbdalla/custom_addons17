@@ -1,0 +1,22 @@
+<templates xml:space="preserve">
+    <t t-name="maintenance_dashboard.Template">
+        <div class="o_dashboard container">
+            <div class="row mt-4">
+                <t t-foreach="state.stats" t-as="stat" t-key="stat.state">
+                    <div class="col-md-4 mb-3">
+                        <div class="card shadow text-center">
+                            <div class="card-body">
+                                <h1 class="fw-bold">
+                                    <t t-esc="stat.total"/>
+                                </h1>
+                                <p class="text-muted">
+                                    <t t-esc="getStateLabel(stat.state)"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+</templates>
