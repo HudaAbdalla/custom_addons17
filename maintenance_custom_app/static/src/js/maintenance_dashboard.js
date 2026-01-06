@@ -28,6 +28,6 @@ class MaintenanceDashboard extends Component {
     }
 }
 
-MaintenanceDashboard.template = "maintenance_dashboard.Template";
+MaintenanceDashboard.template = "colored_kpi_dashboard.Template";
 
 registry.category("actions").add("maintenance_dashboard", MaintenanceDashboard);

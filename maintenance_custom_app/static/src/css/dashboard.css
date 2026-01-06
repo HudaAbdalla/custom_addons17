@@ -1,0 +1,65 @@
+.o_colored_dashboard {
+    padding: 24px;
+}
+
+/* Card Base */
+.kpi-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    transition: transform 0.25s ease;
+    cursor: pointer;
+}
+
+.kpi-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Top Section */
+.kpi-top {
+    padding: 28px;
+    text-align: center;
+    color: #fff;
+}
+
+.kpi-top h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.kpi-top span {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Bottom Section */
+.kpi-bottom {
+    padding: 16px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Colors */
+.kpi-draft .kpi-top {
+    background: linear-gradient(135deg, #ff9f43, #ff7f00);
+}
+.kpi-draft .kpi-bottom {
+    color: #ff7f00;
+}
+
+.kpi-progress .kpi-top {
+    background: linear-gradient(135deg, #5b9cff, #2979ff);
+}
+.kpi-progress .kpi-bottom {
+    color: #2979ff;
+}
+
+.kpi-done .kpi-top {
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+}
+.kpi-done .kpi-bottom {
+    color: #2e7d32;
+}

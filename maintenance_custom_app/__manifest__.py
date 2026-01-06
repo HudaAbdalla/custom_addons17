@@ -40,6 +40,7 @@
     "web.assets_backend": [
         "maintenance_custom_app/static/src/js/maintenance_dashboard.js",
         "maintenance_custom_app/static/src/xml/maintenance_dashboard.xml",
+        "maintenance_custom_app/static/src/css/dashboard.css"
     ],
     },
     'installable': True,

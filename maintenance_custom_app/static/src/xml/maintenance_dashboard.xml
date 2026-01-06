@@ -1,4 +1,55 @@
-<templates xml:space="preserve">
+  <!-- OWL Template -->
+    <templates>
+        <t t-name="colored_kpi_dashboard.Template">
+            <div class="o_colored_dashboard">
+                <div class="row g-4">
+
+                    <!-- Draft -->
+                    <div class="col-md-4">
+                        <div class="kpi-card kpi-draft">
+                            <div class="kpi-top">
+                                <h1>2</h1>
+                                <span>Draft</span>
+                            </div>
+                            <div class="kpi-bottom">
+                                Draft
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- In Progress -->
+                    <div class="col-md-4">
+                        <div class="kpi-card kpi-progress">
+                            <div class="kpi-top">
+                                <h1>3</h1>
+                                <span>In Progress</span>
+                            </div>
+                            <div class="kpi-bottom">
+                                In Progress
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Done -->
+                    <div class="col-md-4">
+                        <div class="kpi-card kpi-done">
+                            <div class="kpi-top">
+                                <h1>1</h1>
+                                <span>Done</span>
+                            </div>
+                            <div class="kpi-bottom">
+                                Done
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </t>
+    </templates>
+
+
+<!-- <templates xml:space="preserve">
     <t t-name="maintenance_dashboard.Template">
         <div class="o_dashboard container">
             <div class="row mt-4">
@@ -19,4 +70,4 @@
             </div>
         </div>
     </t>
-</templates>
+</templates> -->
